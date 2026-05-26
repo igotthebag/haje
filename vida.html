@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vida Académica — UCM</title>
+  <link rel="stylesheet" href="ucm-style.css">
+  <style>
+    .calendar-table-wrap { overflow-x:auto; }
+    .calendar-table { width:100%; border-collapse:collapse; }
+    .calendar-table thead tr { background:var(--navy); }
+    .calendar-table thead th { padding:0.9rem 1rem; text-align:left; color:var(--white); font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; }
+    .calendar-table tbody tr { border-bottom:1px solid rgba(0,0,0,0.06); }
+    .calendar-table tbody tr:hover { background:var(--gold-pale); }
+    .calendar-table tbody td { padding:0.85rem 1rem; font-size:0.95rem; color:var(--text-muted); }
+    .calendar-table .event-name { font-weight:600; color:var(--navy); font-family:'Cormorant Garamond',serif; font-size:1.05rem; }
+    .cal-type { display:inline-block; padding:0.18rem 0.65rem; border-radius:20px; font-size:0.74rem; font-weight:700; letter-spacing:0.05em; }
+    .cal-academic { background:#ddeeff; color:#1a4a80; }
+    .cal-exam { background:#fde8e8; color:#8a2020; }
+    .cal-event { background:var(--gold-pale); color:#6b4d00; }
+    .cal-holiday { background:#e8f5e9; color:#1a5e2a; }
+
+    .activities-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.3rem; margin-top:1.5rem; }
+    .activity-card {
+      background:var(--white); padding:1.6rem;
+      border-radius:2px; border-bottom:3px solid var(--gold);
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      transition:transform 0.2s, box-shadow 0.2s;
+    }
+    .activity-card:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(13,27,53,0.1); }
+    .activity-card .act-icon { font-size:2rem; margin-bottom:0.8rem; }
+    .activity-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--navy); margin-bottom:0.5rem; }
+    .activity-card p { font-size:0.9rem; color:var(--text-muted); line-height:1.65; }
+    .activity-card .act-details { margin-top:0.8rem; font-size:0.82rem; color:var(--text-muted); }
+    .activity-card .act-details strong { color:var(--navy); }
+
+    .support-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1rem; margin-top:1.5rem; }
+    .support-item { background:var(--white); padding:1.4rem; border-left:4px solid var(--navy); }
+    .support-item h4 { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--navy); margin-bottom:0.4rem; }
+    .support-item p { font-size:0.88rem; color:var(--text-muted); line-height:1.6; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">UCM</div>
+      <span>Universidade Católica de Moçambique</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
+      <li><a href="investigacao.html">Investigação</a></li>
+      <li><a href="vida.html" class="active">Vida Académica</a></li>
+      <li><a href="contactos.html">Contactos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Vida Académica</span>
+    <h1>Muito além da<br><em>sala de aula</em></h1>
+    <div class="hero-gold-line"></div>
+    <p>A UCM oferece uma experiência universitária completa, com actividades culturais, desportivas, científicas e de serviço à comunidade.</p>
+  </div>
+</div>
+
+<main>
+
+  <!-- CALENDÁRIO -->
+  <p class="section-title">Calendário Académico 2026</p>
+  <p class="section-sub">Datas importantes do ano lectivo em curso</p>
+
+  <div class="content-section">
+    <h2>1.º Semestre</h2>
+    <div class="calendar-table-wrap">
+      <table class="calendar-table">
+        <thead>
+          <tr><th>Data</th><th>Evento</th><th>Tipo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>3 Fev. 2026</td><td class="event-name">Início das aulas — 1.º Semestre</td><td><span class="cal-type cal-academic">Académico</span></td></tr>
+          <tr><td>20 Fev. 2026</td><td class="event-name">Último dia de candidaturas ao 2.º ano</td><td><span class="cal-type cal-academic">Académico</span></td></tr>
+          <tr><td>7 Abr. 2026</td><td class="event-name">Semana Santa — Pausa Lectiva</td><td><span class="cal-type cal-holiday">Feriado</span></td></tr>
+          <tr><td>20 Mai. 2026</td><td class="event-name">Semana Académica UCM 2026</td><td><span class="cal-type cal-event">Evento</span></td></tr>
+          <tr><td>5 Jun. 2026</td><td class="event-name">Período de Revisões — 1.º Semestre</td><td><span class="cal-type cal-exam">Exames</span></td></tr>
+          <tr><td>15 Jun. 2026</td><td class="event-name">Início dos Exames — 1.º Semestre</td><td><span class="cal-type cal-exam">Exames</span></td></tr>
+          <tr><td>30 Jun. 2026</td><td class="event-name">Fim dos Exames — 1.º Semestre</td><td><span class="cal-type cal-exam">Exames</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="content-section" style="margin-top:1.5rem;">
+    <h2>2.º Semestre</h2>
+    <div class="calendar-table-wrap">
+      <table class="calendar-table">
+        <thead>
+          <tr><th>Data</th><th>Evento</th><th>Tipo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>3 Ago. 2026</td><td class="event-name">Início das aulas — 2.º Semestre</td><td><span class="cal-type cal-academic">Académico</span></td></tr>
+          <tr><td>7 Set. 2026</td><td class="event-name">Dia da Vitória — Feriado Nacional</td><td><span class="cal-type cal-holiday">Feriado</span></td></tr>
+          <tr><td>25 Set. 2026</td>  <td class="event-name">Dia das Forças Armadas — Feriado</td><td><span class="cal-type cal-holiday">Feriado</span></td></tr>
+          <tr><td>Oct. 2026</td><td class="event-name">Conferência Científica UCM 2026</td><td><span class="cal-type cal-event">Evento</span></td></tr>
+          <tr><td>Nov. 2026</td><td class="event-name">Cerimónia de Formatura 2026</td><td><span class="cal-type cal-event">Evento</span></td></tr>
+          <tr><td>23 Nov. 2026</td><td class="event-name">Início dos Exames — 2.º Semestre</td><td><span class="cal-type cal-exam">Exames</span></td></tr>
+          <tr><td>15 Dez. 2026</td><td class="event-name">Fim do Ano Lectivo 2026</td><td><span class="cal-type cal-academic">Académico</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ACTIVIDADES -->
+  <div style="margin-top:3rem;">
+    <p class="section-title">Actividades Estudantis</p>
+    <p class="section-sub">Iniciativas que enriquecem a experiência universitária</p>
+
+    <div class="activities-grid">
+      <div class="activity-card">
+        <div class="act-icon">🎭</div>
+        <h3>Semana Académica</h3>
+        <p>O maior evento estudantil do ano, com concertos, teatro, debates, exposições e competições desportivas durante uma semana de convívio e celebração.</p>
+        <div class="act-details"><strong>Próxima edição:</strong> 20–25 de Maio de 2026</div>
+      </div>
+
+      <div class="activity-card">
+        <div class="act-icon">⚽</div>
+        <h3>Desporto Universitário</h3>
+        <p>Equipas de futebol, basquetebol, voleibol e atletismo que competem nos campeonatos universitários nacionais e representam a UCM com orgulho.</p>
+        <div class="act-details"><strong>Inscrições:</strong> Início de cada semestre</div>
+      </div>
+
+      <div class="activity-card">
+        <div class="act-icon">🔬</div>
+        <h3>Conferência Científica Estudantil</h3>
+        <p>Fórum anual para apresentação de trabalhos de investigação realizados por estudantes, com painéis por área científica e prémios de excelência.</p>
+        <div class="act-details"><strong>Próxima edição:</strong> Outubro 2026</div>
+      </div>
+
+      <div class="activity-card">
+        <div class="act-icon">🌿</div>
+        <h3>Clube de Ambiente e Sustentabilidade</h3>
+        <p>Actividades de sensibilização ambiental, limpeza de praias, plantação de árvores e projectos de energia renovável nas comunidades.</p>
+        <div class="act-details"><strong>Reuniões:</strong> Quinzenal — Sextas 14h</div>
+      </div>
+
+      <div class="activity-card">
+        <div class="act-icon">🎵</div>
+        <h3>Grupo Cultural UCM</h3>
+        <p>Coral, grupo de teatro e ensemble musical que participam em eventos institucionais e promovem a cultura moçambicana dentro e fora do campus.</p>
+        <div class="act-details"><strong>Ensaios:</strong> 3.ª e 5.ª feira 16h–18h</div>
+      </div>
+
+      <div class="activity-card">
+        <div class="act-icon">🤝</div>
+        <h3>Voluntariado Comunitário</h3>
+        <p>Programa de voluntariado em parceria com organizações da sociedade civil, hospitais, escolas e associações comunitárias locais.</p>
+        <div class="act-details"><strong>Coordenação:</strong> GAE — Gabinete de Acção Estudantil</div>
+      </div>
+
+      <div class="activity-card">
+        <div class="act-icon">💼</div>
+        <h3>Associação de Estudantes (AEU)</h3>
+        <p>O órgão representativo dos estudantes, que defende os interesses académicos, organiza actividades e promove o diálogo com a gestão universitária.</p>
+        <div class="act-details"><strong>Presidente:</strong> Eleito anualmente</div>
+      </div>
+
+      <div class="activity-card">
+        <div class="act-icon">📚</div>
+        <h3>Biblioteca e Centro de Recursos</h3>
+        <p>Acesso a livros, revistas científicas, bases de dados internacionais e recursos digitais para apoio ao estudo e à investigação.</p>
+        <div class="act-details"><strong>Horário:</strong> Seg–Sex 7h–21h | Sáb 8h–13h</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVIÇOS DE APOIO -->
+  <div style="margin-top:3rem;">
+    <p class="section-title" style="font-size:1.5rem;">Serviços de Apoio ao Estudante</p>
+    <div class="support-grid">
+      <div class="support-item">
+        <h4>Gabinete de Apoio Psicológico</h4>
+        <p>Acompanhamento psicológico gratuito e confidencial para estudantes em situação de vulnerabilidade emocional ou académica.</p>
+      </div>
+      <div class="support-item">
+        <h4>Gabinete de Bolsas e Apoio Social</h4>
+        <p>Informações sobre bolsas internas, externas e apoios sociais disponíveis para estudantes com dificuldades económicas.</p>
+      </div>
+      <div class="support-item">
+        <h4>Serviços Académicos</h4>
+        <p>Inscrições, certidões, declarações e outros serviços administrativos para estudantes activos e antigos alunos.</p>
+      </div>
+      <div class="support-item">
+        <h4>Residência Universitária</h4>
+        <p>Alojamento disponível para estudantes deslocados, com vagas limitadas. Candidaturas abertas em Julho para o ano seguinte.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Universidade Católica de Moçambique</h3>
+      <p>Formação integral, investigação e serviço à sociedade moçambicana desde 1996.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="sobre.html">Sobre a UCM</a></li>
+        <li><a href="cursos.html">Oferta Académica</a></li>
+        <li><a href="investigacao.html">Investigação</a></li>
+        <li><a href="vida.html">Vida Académica</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#">Beira, Sofala</a></li>
+        <li><a href="#">+258 23 323 800</a></li>
+        <li><a href="#">info@ucm.ac.mz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Universidade Católica de Moçambique</div>
+</footer>
+
+</body>
+</html>

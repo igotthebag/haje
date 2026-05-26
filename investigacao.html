@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investigação — UCM</title>
+  <link rel="stylesheet" href="ucm-style.css">
+  <style>
+    .research-center {
+      background:var(--white); padding:2rem 2.5rem;
+      border-top:3px solid var(--gold); margin-bottom:1.5rem;
+      border-radius:2px; box-shadow:0 2px 12px rgba(0,0,0,0.04);
+    }
+    .research-center h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:var(--navy); margin-bottom:0.5rem; }
+    .research-center .rc-meta { display:flex; gap:0.6rem; margin-bottom:1rem; flex-wrap:wrap; }
+    .research-center p { font-size:0.97rem; color:var(--text-muted); line-height:1.75; }
+    .research-center .rc-topics { margin-top:1rem; }
+    .research-center .rc-topics h4 { font-size:0.82rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--navy); margin-bottom:0.5rem; }
+    .research-center .rc-topics ul { list-style:none; display:flex; flex-wrap:wrap; gap:0.4rem; }
+    .research-center .rc-topics ul li {
+      background:var(--gold-pale); color:#6b4d00; font-size:0.8rem;
+      padding:0.2rem 0.7rem; border-radius:20px; font-weight:500;
+    }
+
+    .journal-section { background:var(--navy); color:var(--white); padding:2.5rem; border-radius:2px; margin-top:2rem; }
+    .journal-section h2 { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold-light); margin-bottom:0.5rem; }
+    .journal-section > p { color:rgba(255,255,255,0.65); margin-bottom:2rem; }
+
+    .article-list { display:grid; gap:1rem; }
+    .article-item {
+      background:rgba(255,255,255,0.06); padding:1.4rem 1.6rem;
+      border-left:3px solid var(--gold); border-radius:0 2px 2px 0;
+    }
+    .article-meta { display:flex; gap:0.8rem; align-items:center; margin-bottom:0.5rem; flex-wrap:wrap; }
+    .vol-label { font-size:0.75rem; font-weight:700; letter-spacing:0.1em; color:var(--gold); text-transform:uppercase; }
+    .article-item h4 { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; color:var(--white); margin-bottom:0.3rem; }
+    .article-item .authors { font-size:0.87rem; color:rgba(255,255,255,0.5); font-style:italic; }
+    .article-item .abstract { font-size:0.9rem; color:rgba(255,255,255,0.6); margin-top:0.5rem; line-height:1.65; }
+
+    .journal-cta { margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
+    .btn-gold { display:inline-block; padding:0.75rem 2rem; background:var(--gold); color:var(--navy); font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:700; letter-spacing:0.04em; text-decoration:none; }
+    .btn-gold:hover { background:var(--gold-light); }
+    .journal-issn { font-size:0.85rem; color:rgba(255,255,255,0.45); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">UCM</div>
+      <span>Universidade Católica de Moçambique</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
+      <li><a href="investigacao.html" class="active">Investigação</a></li>
+      <li><a href="vida.html">Vida Académica</a></li>
+      <li><a href="contactos.html">Contactos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Investigação &amp; Publicações</span>
+    <h1>Ciência ao serviço de<br><em>Moçambique</em></h1>
+    <div class="hero-gold-line"></div>
+    <p>Os nossos centros de investigação produzem conhecimento relevante para os desafios do desenvolvimento nacional, da saúde, da educação e do ambiente.</p>
+  </div>
+</div>
+
+<main>
+
+  <p class="section-title">Centros de Investigação</p>
+  <p class="section-sub">Unidades dedicadas à produção de conhecimento científico com impacto social</p>
+
+  <div class="research-center">
+    <h3>Centro de Investigação em Saúde (CIS)</h3>
+    <div class="rc-meta">
+      <span class="badge badge-gold">Activo</span>
+      <span class="badge badge-navy">Beira</span>
+    </div>
+    <p>O CIS desenvolve investigação aplicada nas áreas de saúde pública, epidemiologia, nutrição e sistemas de saúde, com foco especial nas doenças prevalentes em Moçambique, incluindo malária, tuberculose e doenças não transmissíveis.</p>
+    <div class="rc-topics">
+      <h4>Linhas de Investigação</h4>
+      <ul>
+        <li>Epidemiologia das Doenças Infecciosas</li>
+        <li>Nutrição e Segurança Alimentar</li>
+        <li>Saúde Materno-Infantil</li>
+        <li>Gestão de Sistemas de Saúde</li>
+        <li>Saúde Ambiental</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="research-center">
+    <h3>Centro de Investigação em Educação e Desenvolvimento (CIED)</h3>
+    <div class="rc-meta">
+      <span class="badge badge-gold">Activo</span>
+      <span class="badge badge-navy">Beira / Nampula</span>
+    </div>
+    <p>O CIED centra a sua actividade no estudo dos sistemas educativos, na formação de professores, na qualidade do ensino e nos processos de desenvolvimento comunitário, com particular atenção às zonas rurais e periurbanas.</p>
+    <div class="rc-topics">
+      <h4>Linhas de Investigação</h4>
+      <ul>
+        <li>Qualidade do Ensino Básico</li>
+        <li>Formação Inicial e Contínua de Professores</li>
+        <li>Educação Inclusiva</li>
+        <li>Desenvolvimento Comunitário</li>
+        <li>Políticas Educativas</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="research-center">
+    <h3>Centro de Investigação em Direito e Governação (CIDG)</h3>
+    <div class="rc-meta">
+      <span class="badge badge-gold">Activo</span>
+      <span class="badge badge-navy">Beira</span>
+    </div>
+    <p>Vocacionado para o estudo do direito moçambicano, das políticas públicas e da governação democrática, o CIDG contribui para o fortalecimento do Estado de Direito e para a proteção dos direitos humanos em Moçambique.</p>
+    <div class="rc-topics">
+      <h4>Linhas de Investigação</h4>
+      <ul>
+        <li>Direitos Humanos e Cidadania</li>
+        <li>Direito dos Recursos Naturais</li>
+        <li>Justiça Transicional</li>
+        <li>Descentralização e Governação Local</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="research-center">
+    <h3>Centro de Investigação em Ambiente e Recursos Naturais (CIARN)</h3>
+    <div class="rc-meta">
+      <span class="badge badge-gold">Activo</span>
+      <span class="badge badge-navy">Beira</span>
+    </div>
+    <p>O CIARN investiga a gestão sustentável dos ecossistemas moçambicanos, as alterações climáticas e o impacto ambiental das actividades humanas, propondo soluções baseadas em ciência para os decisores políticos e comunidades locais.</p>
+    <div class="rc-topics">
+      <h4>Linhas de Investigação</h4>
+      <ul>
+        <li>Alterações Climáticas e Adaptação</li>
+        <li>Gestão de Zonas Costeiras</li>
+        <li>Biodiversidade e Ecossistemas</li>
+        <li>Energias Renováveis</li>
+        <li>Agricultura Sustentável</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- REVISTA CIENTÍFICA -->
+  <div class="journal-section">
+    <h2>Revista Científica UCM</h2>
+    <p>Publicação académica multidisciplinar da Universidade Católica de Moçambique, com revisão por pares, dedicada à divulgação da investigação científica produzida na UCM e por colaboradores externos.</p>
+
+    <div class="article-list">
+      <div class="article-item">
+        <div class="article-meta">
+          <span class="vol-label">Vol. 8 • 2026</span>
+          <span class="badge badge-gold" style="font-size:0.72rem;">Saúde</span>
+        </div>
+        <h4>Prevalência de Desnutrição Crónica em Crianças Menores de 5 Anos em Sofala</h4>
+        <div class="authors">Nhantumbo, A., Sitoe, M., Cossa, B.</div>
+        <div class="abstract">Estudo transversal realizado em 12 distritos da Província de Sofala, analisando determinantes sociais e nutricionais da desnutrição crónica infantil.</div>
+      </div>
+
+      <div class="article-item">
+        <div class="article-meta">
+          <span class="vol-label">Vol. 8 • 2026</span>
+          <span class="badge badge-gold" style="font-size:0.72rem;">Educação</span>
+        </div>
+        <h4>Literacia Digital de Professores do Ensino Secundário em Nampula: Desafios e Oportunidades</h4>
+        <div class="authors">Macuacua, F., Buque, D.</div>
+        <div class="abstract">Avaliação das competências digitais de 320 professores e proposta de modelo de formação contínua para integração das TIC no ensino.</div>
+      </div>
+
+      <div class="article-item">
+        <div class="article-meta">
+          <span class="vol-label">Vol. 7 • 2025</span>
+          <span class="badge badge-gold" style="font-size:0.72rem;">Ambiente</span>
+        </div>
+        <h4>Impacto das Alterações Climáticas na Pesca Artesanal na Zona Costeira de Sofala</h4>
+        <div class="authors">Tembe, R., Guambe, L., Ussene, A.</div>
+        <div class="abstract">Análise de 15 anos de dados climatológicos e de captura piscatória para identificar tendências e propor estratégias de adaptação.</div>
+      </div>
+
+      <div class="article-item">
+        <div class="article-meta">
+          <span class="vol-label">Vol. 7 • 2025</span>
+          <span class="badge badge-gold" style="font-size:0.72rem;">Direito</span>
+        </div>
+        <h4>Acesso à Justiça em Comunidades Rurais de Moçambique: O Papel da Justiça Comunitária</h4>
+        <div class="authors">Chambote, R., Cossa, E.</div>
+        <div class="abstract">Estudo qualitativo sobre o funcionamento dos tribunais comunitários e o seu papel no acesso à justiça nas zonas rurais.</div>
+      </div>
+    </div>
+
+    <div class="journal-cta">
+      <a href="contactos.html" class="btn-gold">Submeter Artigo</a>
+      <span class="journal-issn">ISSN: 2218-4678 (online) &nbsp;|&nbsp; Publicação semestral &nbsp;|&nbsp; Revisão por pares (double-blind)</span>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Universidade Católica de Moçambique</h3>
+      <p>Formação integral, investigação e serviço à sociedade moçambicana desde 1996.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="sobre.html">Sobre a UCM</a></li>
+        <li><a href="cursos.html">Oferta Académica</a></li>
+        <li><a href="investigacao.html">Investigação</a></li>
+        <li><a href="vida.html">Vida Académica</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#">Beira, Sofala</a></li>
+        <li><a href="#">+258 23 323 800</a></li>
+        <li><a href="#">info@ucm.ac.mz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Universidade Católica de Moçambique</div>
+</footer>
+
+</body>
+</html>

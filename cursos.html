@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta Académica — UCM</title>
+  <link rel="stylesheet" href="ucm-style.css">
+  <style>
+    .filter-bar { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:2rem; }
+    .filter-btn {
+      padding:0.5rem 1.3rem; border:1px solid var(--border); background:var(--white);
+      font-family:'Crimson Pro',serif; font-size:0.92rem; cursor:pointer;
+      color:var(--text-muted); border-radius:20px; transition:all 0.2s;
+    }
+    .filter-btn.active,
+    .filter-btn:hover { background:var(--navy); color:var(--white); border-color:var(--navy); }
+
+    .course-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.2rem; }
+    .course-card {
+      background:var(--white); border:1px solid rgba(0,0,0,0.07);
+      padding:1.5rem; border-radius:2px;
+      border-left:4px solid var(--gold);
+      transition:box-shadow 0.2s, transform 0.2s;
+    }
+    .course-card:hover { box-shadow:0 6px 24px rgba(13,27,53,0.1); transform:translateY(-2px); }
+    .course-card.hidden { display:none; }
+    .course-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:0.7rem; }
+    .course-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:var(--navy); flex:1; }
+    .course-meta { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.7rem; }
+    .course-desc { font-size:0.9rem; color:var(--text-muted); line-height:1.65; }
+    .course-footer { margin-top:1rem; padding-top:0.8rem; border-top:1px solid rgba(0,0,0,0.06); display:flex; gap:0.6rem; align-items:center; }
+    .duration { font-size:0.82rem; color:var(--text-muted); }
+    .duration strong { color:var(--navy); }
+
+    .info-box {
+      background:var(--navy); color:var(--white); padding:2rem 2.5rem;
+      border-radius:2px; margin-top:2.5rem;
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1.5rem;
+    }
+    .info-box h4 { font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--gold); margin-bottom:0.4rem; letter-spacing:0.06em; text-transform:uppercase; }
+    .info-box p { font-size:0.9rem; color:rgba(255,255,255,0.7); line-height:1.6; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">UCM</div>
+      <span>Universidade Católica de Moçambique</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="cursos.html" class="active">Cursos</a></li>
+      <li><a href="investigacao.html">Investigação</a></li>
+      <li><a href="vida.html">Vida Académica</a></li>
+      <li><a href="contactos.html">Contactos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Oferta Académica</span>
+    <h1>Cursos para os<br><em>desafios</em> do amanhã</h1>
+    <div class="hero-gold-line"></div>
+    <p>Licenciaturas, Mestrados e Formação Contínua desenhados para responder às necessidades do mercado e da sociedade moçambicana.</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterCourses('all',this)">Todos</button>
+    <button class="filter-btn" onclick="filterCourses('licenciatura',this)">Licenciaturas</button>
+    <button class="filter-btn" onclick="filterCourses('mestrado',this)">Mestrados</button>
+    <button class="filter-btn" onclick="filterCourses('continua',this)">Formação Contínua</button>
+  </div>
+
+  <div class="course-list">
+
+    <!-- LICENCIATURAS -->
+    <div class="course-card" data-type="licenciatura">
+      <div class="course-header"><div class="course-title">Medicina</div></div>
+      <div class="course-meta"><span class="badge badge-gold">Licenciatura</span><span class="badge badge-navy">Saúde</span></div>
+      <div class="course-desc">Formação de médicos para responder às necessidades de saúde da população moçambicana, com forte componente prática.</div>
+      <div class="course-footer"><span class="duration"><strong>7 anos</strong> — Beira</span></div>
+    </div>
+
+    <div class="course-card" data-type="licenciatura">
+      <div class="course-header"><div class="course-title">Enfermagem</div></div>
+      <div class="course-meta"><span class="badge badge-gold">Licenciatura</span><span class="badge badge-navy">Saúde</span></div>
+      <div class="course-desc">Profissionais de enfermagem com competências técnicas, científicas e humanísticas para os sistemas de saúde.</div>
+      <div class="course-footer"><span class="duration"><strong>4 anos</strong> — Beira / Nampula</span></div>
+    </div>
+
+    <div class="course-card" data-type="licenciatura">
+      <div class="course-header"><div class="course-title">Gestão de Empresas</div></div>
+      <div class="course-meta"><span class="badge badge-gold">Licenciatura</span><span class="badge badge-navy">Negócios</span></div>
+      <div class="course-desc">Formação em gestão estratégica, finanças, marketing e empreendedorismo adaptada ao contexto africano.</div>
+      <div class="course-footer"><span class="duration"><strong>4 anos</strong> — Beira / Nampula / Cuamba</span></div>
+    </div>
+
+    <div class="course-card" data-type="licenciatura">
+      <div class="course-header"><div class="course-title">Direito</div></div>
+      <div class="course-meta"><span class="badge badge-gold">Licenciatura</span><span class="badge badge-navy">Ciências Jurídicas</span></div>
+      <div class="course-desc">Formação jurídica sólida para advogados, magistrados e juristas comprometidos com a justiça social.</div>
+      <div class="course-footer"><span class="duration"><strong>4 anos</strong> — Beira / Nampula</span></div>
+    </div>
+
+    <div class="course-card" data-type="licenciatura">
+      <div class="course-header"><div class="course-title">Educação Básica</div></div>
+      <div class="course-meta"><span class="badge badge-gold">Licenciatura</span><span class="badge badge-navy">Educação</span></div>
+      <div class="course-desc">Formação de professores para o ensino básico, com ênfase na pedagogia activa e nos contextos rurais.</div>
+      <div class="course-footer"><span class="duration"><strong>4 anos</strong> — Todas as delegações</span></div>
+    </div>
+
+    <div class="course-card" data-type="licenciatura">
+      <div class="course-header"><div class="course-title">Farmácia</div></div>
+      <div class="course-meta"><span class="badge badge-gold">Licenciatura</span><span class="badge badge-navy">Saúde</span></div>
+      <div class="course-desc">Especialistas em ciências farmacêuticas para o sector da saúde e indústria farmacêutica em Moçambique.</div>
+      <div class="course-footer"><span class="duration"><strong>5 anos</strong> — Beira</span></div>
+    </div>
+
+    <!-- MESTRADOS -->
+    <div class="course-card" data-type="mestrado">
+      <div class="course-header"><div class="course-title">Gestão de Recursos Naturais</div></div>
+      <div class="course-meta"><span class="badge badge-navy">Mestrado</span><span class="badge badge-gold">Ambiente</span></div>
+      <div class="course-desc">Novo programa focado na gestão sustentável dos recursos naturais de Moçambique, em parceria com universidades europeias.</div>
+      <div class="course-footer"><span class="duration"><strong>2 anos</strong> — Beira</span></div>
+    </div>
+
+    <div class="course-card" data-type="mestrado">
+      <div class="course-header"><div class="course-title">Saúde Pública</div></div>
+      <div class="course-meta"><span class="badge badge-navy">Mestrado</span><span class="badge badge-gold">Saúde</span></div>
+      <div class="course-desc">Pós-graduação em epidemiologia, políticas de saúde e gestão de sistemas de saúde em contexto africano.</div>
+      <div class="course-footer"><span class="duration"><strong>2 anos</strong> — Beira</span></div>
+    </div>
+
+    <div class="course-card" data-type="mestrado">
+      <div class="course-header"><div class="course-title">Administração e Gestão Educacional</div></div>
+      <div class="course-meta"><span class="badge badge-navy">Mestrado</span><span class="badge badge-gold">Educação</span></div>
+      <div class="course-desc">Liderança institucional, gestão escolar e políticas educativas para profissionais do sector da educação.</div>
+      <div class="course-footer"><span class="duration"><strong>2 anos</strong> — Beira / Nampula</span></div>
+    </div>
+
+    <!-- FORMAÇÃO CONTÍNUA -->
+    <div class="course-card" data-type="continua">
+      <div class="course-header"><div class="course-title">Gestão de Projectos</div></div>
+      <div class="course-meta"><span class="badge badge-gold">Formação Contínua</span></div>
+      <div class="course-desc">Certificação prática em gestão de projectos com metodologias PMI e ágeis, para profissionais em actividade.</div>
+      <div class="course-footer"><span class="duration"><strong>6 meses</strong> — Presencial / Online</span></div>
+    </div>
+
+    <div class="course-card" data-type="continua">
+      <div class="course-header"><div class="course-title">Tecnologias de Informação e Comunicação</div></div>
+      <div class="course-meta"><span class="badge badge-gold">Formação Contínua</span></div>
+      <div class="course-desc">Competências digitais essenciais: redes, programação básica, cibersegurança e ferramentas de produtividade.</div>
+      <div class="course-footer"><span class="duration"><strong>4 meses</strong> — Online</span></div>
+    </div>
+
+    <div class="course-card" data-type="continua">
+      <div class="course-header"><div class="course-title">Empreendedorismo e Inovação</div></div>
+      <div class="course-meta"><span class="badge badge-gold">Formação Contínua</span></div>
+      <div class="course-desc">Criação e gestão de negócios, modelos de negócio, financiamento e inovação para o mercado moçambicano.</div>
+      <div class="course-footer"><span class="duration"><strong>3 meses</strong> — Beira / Online</span></div>
+    </div>
+
+  </div>
+
+  <div class="info-box">
+    <div>
+      <h4>Candidaturas</h4>
+      <p>Abertas até 30 de Junho de 2026. Documentação online ou nos Secretariados.</p>
+    </div>
+    <div>
+      <h4>Requisitos</h4>
+      <p>12ª classe concluída (licenciaturas) ou licenciatura (mestrados). Equivalências aceites.</p>
+    </div>
+    <div>
+      <h4>Bolsas</h4>
+      <p>Bolsas internas e externas disponíveis. Contacte o Gabinete de Bolsas.</p>
+    </div>
+    <div>
+      <h4>Informações</h4>
+      <p>+258 23 323 800 | candidaturas@ucm.ac.mz</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Universidade Católica de Moçambique</h3>
+      <p>Formação integral, investigação e serviço à sociedade moçambicana desde 1996.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="sobre.html">Sobre a UCM</a></li>
+        <li><a href="cursos.html">Oferta Académica</a></li>
+        <li><a href="investigacao.html">Investigação</a></li>
+        <li><a href="vida.html">Vida Académica</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#">Beira, Sofala</a></li>
+        <li><a href="#">+258 23 323 800</a></li>
+        <li><a href="#">info@ucm.ac.mz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Universidade Católica de Moçambique</div>
+</footer>
+
+<script>
+function filterCourses(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.course-card').forEach(card => {
+    if (type === 'all' || card.dataset.type === type) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
+</body>
+</html>

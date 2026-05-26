@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre a UCM — Universidade Católica de Moçambique</title>
+  <link rel="stylesheet" href="ucm-style.css">
+  <style>
+    .tabs { display:flex; gap:0; border-bottom:2px solid var(--border); margin-bottom:2rem; }
+    .tab-btn {
+      padding:0.75rem 1.5rem; background:none; border:none; cursor:pointer;
+      font-family:'Crimson Pro',serif; font-size:1rem; font-weight:500;
+      color:var(--text-muted); border-bottom:3px solid transparent; margin-bottom:-2px;
+      transition:color 0.2s, border-color 0.2s;
+    }
+    .tab-btn.active { color:var(--navy); border-bottom-color:var(--gold); font-weight:600; }
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
+
+    .organ-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.2rem; margin-top:1.2rem; }
+    .organ-card {
+      background:var(--white); border:1px solid rgba(0,0,0,0.07);
+      padding:1.5rem; border-radius:2px;
+      border-top:3px solid var(--navy);
+    }
+    .organ-card .role {
+      font-size:0.75rem; font-weight:700; letter-spacing:0.1em;
+      text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem;
+    }
+    .organ-card .name {
+      font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600;
+      color:var(--navy); margin-bottom:0.2rem;
+    }
+    .organ-card .dept { font-size:0.88rem; color:var(--text-muted); }
+
+    .partners-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1rem; margin-top:1.2rem; }
+    .partner {
+      background:var(--white); padding:1.3rem 1.5rem;
+      border-left:3px solid var(--gold); border-radius:0 2px 2px 0;
+      display:flex; align-items:flex-start; gap:0.8rem;
+    }
+    .partner-flag { font-size:1.5rem; }
+    .partner h4 { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:0.2rem; }
+    .partner p { font-size:0.83rem; color:var(--text-muted); }
+
+    .timeline { position:relative; padding-left:2rem; }
+    .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--gold); opacity:0.4; }
+    .tl-item { position:relative; margin-bottom:1.8rem; }
+    .tl-item::before {
+      content:''; position:absolute; left:-2rem; top:0.35rem;
+      width:12px; height:12px; border-radius:50%;
+      background:var(--gold); border:2px solid var(--cream);
+      margin-left:-5px;
+    }
+    .tl-year { font-size:0.8rem; font-weight:700; letter-spacing:0.08em; color:var(--gold); margin-bottom:0.2rem; }
+    .tl-title { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; color:var(--navy); margin-bottom:0.3rem; }
+    .tl-desc { font-size:0.95rem; color:var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">UCM</div>
+      <span>Universidade Católica de Moçambique</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html" class="active">Sobre</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
+      <li><a href="investigacao.html">Investigação</a></li>
+      <li><a href="vida.html">Vida Académica</a></li>
+      <li><a href="contactos.html">Contactos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Sobre a UCM</span>
+    <h1>Uma universidade ao serviço<br>de <em>Moçambique</em></h1>
+    <div class="hero-gold-line"></div>
+    <p>Conhecida pelo seu compromisso com a excelência académica e os valores cristãos, a UCM é uma referência no ensino superior moçambicano.</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('historia')">História e Missão</button>
+    <button class="tab-btn" onclick="showTab('orgaos')">Órgãos de Gestão</button>
+    <button class="tab-btn" onclick="showTab('parcerias')">Parcerias Institucionais</button>
+  </div>
+
+  <!-- TAB: HISTÓRIA -->
+  <div class="tab-panel active" id="tab-historia">
+    <div class="content-section">
+      <h2>História</h2>
+      <p>A Universidade Católica de Moçambique foi fundada em 1996 pela Conferência Episcopal de Moçambique, com a missão de contribuir para o desenvolvimento integral do país através da formação de profissionais qualificados, enraizados nos valores humanos e cristãos.</p>
+      <p style="margin-top:1rem;">Com sede em Beira, a UCM cresceu progressivamente, estabelecendo delegações em Nampula e Cuamba, e hoje conta com mais de 12 000 estudantes distribuídos por diversas faculdades e cursos.</p>
+    </div>
+
+    <div class="content-section" style="margin-top:1.5rem;">
+      <h2>Linha do Tempo</h2>
+      <div class="timeline" style="margin-top:1.2rem;">
+        <div class="tl-item">
+          <div class="tl-year">1996</div>
+          <div class="tl-title">Fundação da UCM</div>
+          <div class="tl-desc">A Conferência Episcopal de Moçambique cria a universidade com as primeiras faculdades em Beira.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2001</div>
+          <div class="tl-title">Abertura da Delegação de Nampula</div>
+          <div class="tl-desc">Expansão para o norte do país, alargando o acesso ao ensino superior na região.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2008</div>
+          <div class="tl-title">Lançamento dos Programas de Mestrado</div>
+          <div class="tl-desc">Início dos programas de pós-graduação, consolidando a investigação científica.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2015</div>
+          <div class="tl-title">Criação do Centro de Investigação</div>
+          <div class="tl-desc">Formação dos centros de investigação multidisciplinares para responder aos desafios de Moçambique.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-title">Acreditação Internacional</div>
+          <div class="tl-desc">A UCM recebe acreditação de organismos internacionais, reforçando o reconhecimento da qualidade académica.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" style="margin-top:1.5rem;">
+      <h2>Missão, Visão e Valores</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Missão</h3>
+          <p>Promover a formação integral da pessoa humana e o desenvolvimento da ciência ao serviço da sociedade moçambicana, à luz dos valores cristãos.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌟</div>
+          <h3>Visão</h3>
+          <p>Ser uma universidade de referência em Moçambique e na África Austral, reconhecida pela qualidade do ensino, investigação e impacto social.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚖️</div>
+          <h3>Valores</h3>
+          <p>Excelência académica, integridade, solidariedade, respeito pela dignidade humana e compromisso com o desenvolvimento sustentável.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: ÓRGÃOS -->
+  <div class="tab-panel" id="tab-orgaos">
+    <div class="content-section">
+      <h2>Estrutura de Governação</h2>
+      <p>A UCM é governada por um conjunto de órgãos que asseguram a boa gestão académica, financeira e administrativa da instituição.</p>
+    </div>
+    <div class="organ-grid" style="margin-top:1.5rem;">
+      <div class="organ-card">
+        <div class="role">Reitoria</div>
+        <div class="name">Reitor</div>
+        <div class="dept">Direcção Superior da Universidade</div>
+      </div>
+      <div class="organ-card">
+        <div class="role">Reitoria</div>
+        <div class="name">Vice-Reitor Académico</div>
+        <div class="dept">Gestão Pedagógica e Científica</div>
+      </div>
+      <div class="organ-card">
+        <div class="role">Reitoria</div>
+        <div class="name">Vice-Reitor Administrativo</div>
+        <div class="dept">Gestão Administrativa e Financeira</div>
+      </div>
+      <div class="organ-card">
+        <div class="role">Conselho Universitário</div>
+        <div class="name">Presidente do Conselho</div>
+        <div class="dept">Órgão Deliberativo Superior</div>
+      </div>
+      <div class="organ-card">
+        <div class="role">Faculdade de Ciências de Saúde</div>
+        <div class="name">Decano</div>
+        <div class="dept">Medicina, Enfermagem, Farmácia</div>
+      </div>
+      <div class="organ-card">
+        <div class="role">Faculdade de Educação</div>
+        <div class="name">Decano</div>
+        <div class="dept">Pedagogia e Ciências da Educação</div>
+      </div>
+      <div class="organ-card">
+        <div class="role">Faculdade de Gestão</div>
+        <div class="name">Decano</div>
+        <div class="dept">Economia, Contabilidade e Gestão</div>
+      </div>
+      <div class="organ-card">
+        <div class="role">Faculdade de Direito</div>
+        <div class="name">Decano</div>
+        <div class="dept">Ciências Jurídicas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: PARCERIAS -->
+  <div class="tab-panel" id="tab-parcerias">
+    <div class="content-section">
+      <h2>Parcerias Institucionais</h2>
+      <p>A UCM mantém acordos de cooperação com universidades e organizações de reconhecida excelência, promovendo a mobilidade estudantil, a investigação conjunta e a partilha de conhecimento.</p>
+    </div>
+    <div class="partners-grid" style="margin-top:1.5rem;">
+      <div class="partner"><span class="partner-flag">🇵🇹</span><div><h4>Universidade de Lisboa</h4><p>Cooperação académica e mobilidade estudantil</p></div></div>
+      <div class="partner"><span class="partner-flag">🇵🇹</span><div><h4>Universidade Católica Portuguesa</h4><p>Parceria estratégica em investigação e ensino</p></div></div>
+      <div class="partner"><span class="partner-flag">🇧🇷</span><div><h4>PUC Rio de Janeiro</h4><p>Intercâmbio académico e pós-graduação</p></div></div>
+      <div class="partner"><span class="partner-flag">🇿🇦</span><div><h4>University of KwaZulu-Natal</h4><p>Investigação conjunta em saúde e ambiente</p></div></div>
+      <div class="partner"><span class="partner-flag">🇮🇹</span><div><h4>Università Cattolica del Sacro Cuore</h4><p>Troca de docentes e programas conjuntos</p></div></div>
+      <div class="partner"><span class="partner-flag">🌍</span><div><h4>União Europeia — Erasmus+</h4><p>Financiamento e mobilidade internacional</p></div></div>
+      <div class="partner"><span class="partner-flag">🌍</span><div><h4>Banco Mundial</h4><p>Projectos de desenvolvimento educacional</p></div></div>
+      <div class="partner"><span class="partner-flag">🇲🇿</span><div><h4>Ministério da Educação — MEC</h4><p>Parceria nacional para o ensino superior</p></div></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Universidade Católica de Moçambique</h3>
+      <p>Formação integral, investigação e serviço à sociedade moçambicana desde 1996.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="sobre.html">Sobre a UCM</a></li>
+        <li><a href="cursos.html">Oferta Académica</a></li>
+        <li><a href="investigacao.html">Investigação</a></li>
+        <li><a href="vida.html">Vida Académica</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#">Beira, Sofala</a></li>
+        <li><a href="#">+258 23 323 800</a></li>
+        <li><a href="#">info@ucm.ac.mz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Universidade Católica de Moçambique</div>
+</footer>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
